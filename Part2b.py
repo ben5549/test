@@ -4,29 +4,29 @@ def scrabble (aDictionary):
     #need to create a list of tiles chosen at random from the list of tiles in Task1
     gameTiles = []
     for i in range(1,8):
-        copyTiles = Task1.tiles.copy()
+        copyTiles = Task1b.tiles.copy()
         choice = rd.choice(copyTiles)
-        Task1.tiles.remove(choice)
+        Task1b.tiles.remove(choice)
         gameTiles.append(choice)
     print(gameTiles)
     
     #now we prints the scores of the chose tiles.
     tileScores = []
     for item in gameTiles:
-        tileScores.append([item, Task3.getLetterScore(item)])
+        tileScores.append([item, Task3b.getLetterScore(item)])
     print(tileScores)
     
     while True:
         word = input("Please enter a word: ")
         word = word.upper()
         if word != "&&&":
-            a = Task6.isValid(word,gameTiles,aDictionary)
+            a = Task6b.isValid(word,gameTiles,aDictionary)
             print(a)
-            if a == (f"'{word}' has a score of: {Task4.getWordScore(word)}"):
+            if a == (f"'{word}' has a score of: {Task4b.getWordScore(word)}"):
                 print ("well done, thanks for playing")
                 break
         else:
             print("thankyou")
             return
 
-scrabble(Task1.dictionary)
+scrabble(Task1b.dictionary)
